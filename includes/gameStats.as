@@ -583,6 +583,7 @@ public function statisticsScreen(showID:String = "All"):void
 						case "KorgonnePregnancy": output2(" Korgonne"); break;
 						case "RiyaPregnancy": output2(" Riya"); break;
 						case "ZaaltPregnancy": output2(" Zaalt"); break;
+						case "IlariaPregnancy": output2(" Ilaria"); break;
 						default: output2(" <i>Unknown</i>"); break;
 					}
 					if(pData.pregnancyIncubation > -1)
