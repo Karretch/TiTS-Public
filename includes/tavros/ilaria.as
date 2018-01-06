@@ -837,6 +837,46 @@ public function ilariaPreg2EmailText():String
 	
 	return doParse(eText);
 }
+//PC birth
+public function ilariaPregnancyEnds():void
+{
+	clearOutput();
+	author("Karretch");
+	showBust("");
+	showName("\nBIRTHING!");
+
+	var se:StorageClass = pc.getStatusEffect("Ilaria Pregnancy Ends");
+	
+	var numChildren:int = se.value1;
+	var bRatingContrib:int = se.value2;
+	var pregSlot:int = se.value3;
+	var babym:Boolean = (se.value4 == 1 ? false : true);
+	
+	//Need to write actual stuff
+	//on ship without automatic medbay
+	if (InShipInterior())
+	{
+		output("\n\nYo, birth stuff, medkit, bed");
+	}
+	//civilization
+	//variation by planet?
+	else if (InPublicSpace())
+	{
+		output("\n\nYo, birth stuff, hospital and/or rush to ship");
+	}
+	//wilds
+	//variation by planet?
+	else if (InRoomWithFlag(GLOBAL.OUTDOOR))
+	{
+		output("\n\nUh oh, here we go, let's make the best of it");
+	}
+	//merge
+	//Tavros variation w/ Ilaria?
+	output("\n\nYo, you pop out the kiddos. Cuddles n stuff? Throw in pod and away they go.");
+	pc.removeStatusEffect("Ilaria Pregnancy Ends");
+	clearMenu();
+	addButton(0, "Next", mainGameMenu);
+}
 /*
 //Pregshit
 output("\n\n//AAaaaahhhhhhh");
