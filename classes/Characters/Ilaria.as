@@ -66,6 +66,7 @@ package classes.Characters
 			this.fertilityRaw = 8;
 			createPerk("Fixed CumQ",50000,0,0,0);
 			//createPerk("No Cum Leakage",0,0,0,0);
+			impregnationType = "IlariaPregnancy";
 		}
 		
 		override public function get bustDisplay():String
